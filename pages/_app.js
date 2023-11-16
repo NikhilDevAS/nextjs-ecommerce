@@ -1,5 +1,10 @@
-import '@/styles/globals.css'
+import ContextProvider from '@/components/Context/ContextProvider';
+import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ContextProvider>
+      <Component {...pageProps} />
+    </ContextProvider>
+  );
 }
