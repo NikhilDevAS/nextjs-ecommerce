@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Rating from 'react-star-rating-component';
+import Rating from '../Rating';
+// import Rating from 'react-star-rating-component';
 
 export default function WriteProductReview({
   showWirteReview,
@@ -10,9 +11,9 @@ export default function WriteProductReview({
 }) {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
-  const handleStarClick = (nextValue, prevValue, name) => {
-    setRating(nextValue);
-  };
+  // const handleStarClick = (nextValue, prevValue, name) => {
+  //   setRating(nextValue);
+  // };
 
   async function saveReview() {
     if (rating && comment) {
@@ -57,7 +58,9 @@ export default function WriteProductReview({
                   <div className="w-[500px]">
                     <div className="flex gap-2 items-center">
                       <p>Select Star Rating:</p>
-                      <Rating
+
+                      <Rating rating={rating} setRating={setRating} />
+                      {/* <Rating
                         className="text-[30px]"
                         value={rating}
                         onStarClick={(nextValue, prevValue, name) =>
@@ -66,7 +69,7 @@ export default function WriteProductReview({
                         starCount={5}
                         starColor={'#ffb400'}
                         emptyStarColor={'#ccc'}
-                      />
+                      /> */}
                     </div>
 
                     <p>Write Review</p>
