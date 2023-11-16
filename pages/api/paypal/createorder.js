@@ -52,6 +52,7 @@ export default async function Handler(req, res) {
       gst: req.body.gst,
       netamount: req.body.netamount,
       paymentType: req.body.paymentType,
+      status: 'Pending',
       paid: false,
     });
 

@@ -42,6 +42,7 @@ export default function CartPage() {
   for (const productId of cartProducts) {
     const price = products.find((p) => p._id === productId)?.price || 0;
     total += price;
+    total.toFixed(2);
   }
 
   if (cartProducts.length === 0) {
@@ -113,7 +114,7 @@ export default function CartPage() {
           user_id: userInfo._id,
           order_price: stringAmount,
           products: orderedProduct,
-          netamount: amount,
+          netamount: amount.toFixed(2),
           gst: 8,
           subtotal: total,
           paymentType,
@@ -143,7 +144,7 @@ export default function CartPage() {
       const response = await axios.post('/api/placeorder', {
         user_id: userInfo._id,
         products: orderedProduct,
-        netamount,
+        netamount: netamount.toFixed(2),
         gst: 8,
         subtotal,
         paymentType,
@@ -256,7 +257,7 @@ export default function CartPage() {
                   <div className="w-full flex justify-between items-center">
                     <div className="text-xl font-semibold">Net Amount : </div>
                     <div className="text-right text-xl font-medium">
-                      $ {total + (total * 8) / 100}
+                      $ {(total + (total * 8) / 100).toFixed(2)}
                     </div>
                   </div>
                   <div className="mt-5">

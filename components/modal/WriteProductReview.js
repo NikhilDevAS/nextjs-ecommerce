@@ -55,7 +55,7 @@ export default function WriteProductReview({
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  <div className="w-[500px]">
+                  <div className="w-auto">
                     <div className="flex gap-2 items-center">
                       <p>Select Star Rating:</p>
 
