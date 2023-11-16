@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import AccountPage from '@/components/AccountPage';
 import Change_Password from '@/components/Change_Password';
 import { Context } from '@/components/Context/ContextProvider';

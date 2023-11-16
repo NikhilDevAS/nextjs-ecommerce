@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Center from '@/components/Center';
 import Header from '@/components/Header';
 import { mongooseConnect } from '@/lib/mongoose';

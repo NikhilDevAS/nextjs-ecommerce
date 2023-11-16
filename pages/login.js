@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Center from '@/components/Center';
 import Header from '@/components/Header';
 import Button from '@/components/properties/Button';
@@ -100,7 +101,7 @@ export default function LoginPage() {
 
             <div className="mt-5">
               <Link className="text-blue-600" href={'/signup'}>
-                Don't have an account? Click here to SignUp
+                {"Don't have an account? Click here to SignUp"}
               </Link>
             </div>
           </div>

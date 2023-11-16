@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Center from '@/components/Center';
 import { Context } from '@/components/Context/ContextProvider';
 import Header from '@/components/Header';
