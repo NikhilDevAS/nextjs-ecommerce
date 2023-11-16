@@ -20,7 +20,6 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
-    "react-star-rating-component": "^1.4.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

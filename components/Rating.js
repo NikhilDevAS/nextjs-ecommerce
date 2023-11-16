@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
 export default function Rating({ rating, setRating }) {
-  //   const [rating, setRating] = useState(0);
-
   const inActivateClass = 'w-6 h-6 text-gray-400 cursor-pointer';
   const activateClass = 'text-yellow-400 w-6 h-6';
   return (
