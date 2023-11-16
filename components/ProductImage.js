@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 export default function ProductImage({ images }) {
   const [activeImage, setActiveImage] = useState(images?.[0]);

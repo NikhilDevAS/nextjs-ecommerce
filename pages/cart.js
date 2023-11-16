@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Center from '@/components/Center';
 import Header from '@/components/Header';
 import Button from '@/components/properties/Button';
