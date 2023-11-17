@@ -2,12 +2,21 @@ import Link from 'next/link';
 import Center from './Center';
 import { useContext, useState } from 'react';
 import { Context } from './Context/ContextProvider';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+  const [searchData, setSearchData] = useState('');
   const { userInfo, authStatus, cartProducts, removeUserInfo } =
     useContext(Context);
 
+  const router = useRouter();
+
   const [mobileNav, setMobileNav] = useState(false);
+  const search = () => {
+    if (searchData) {
+      router.push('/search/product/' + searchData);
+    }
+  };
   return (
     <header className="fixed top-0">
       {/* <pre className="text-white">{JSON.stringify(userInfo)}</pre> */}
@@ -19,6 +28,31 @@ export default function Header() {
           >
             Ecommerce
           </Link>
+          <div className="flex items-center">
+            <input
+              className="px-5 py-1 w-full"
+              type="text"
+              value={searchData}
+              placeholder="Search..."
+              onChange={(e) => setSearchData(e.target.value)}
+            />
+            <button className="mx-3" onClick={() => search()}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 text-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </button>
+          </div>
           <div>
             <nav className="desktop-nav">
               <Link className="nav-link" href={'/'}>

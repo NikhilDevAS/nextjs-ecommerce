@@ -23,19 +23,21 @@ export default function CategoriesPage({ products }) {
           <h1 className="title">Categories</h1>
           {categoryProducts &&
             categoryProducts.map((category, index) => {
-              return (
-                <div key={index} className="mb-5">
-                  <div className="underline flex justify-between items-center">
-                    <h2 className="text-xl font-bold">{category.name}s</h2>
-                    <Link href={'/category/' + category._id}>
-                      Show More Products
-                    </Link>
+              if (category.products.length > 0) {
+                return (
+                  <div key={index} className="mb-5">
+                    <div className="underline flex justify-between items-center">
+                      <h2 className="text-xl font-bold">{category.name}s</h2>
+                      <Link href={'/category/' + category._id}>
+                        Show More Products
+                      </Link>
+                    </div>
+                    <div className="mt-5">
+                      <ProductGrid products={category.products} />
+                    </div>
                   </div>
-                  <div className="mt-5">
-                    <ProductGrid products={category.products} />
-                  </div>
-                </div>
-              );
+                );
+              }
             })}
         </div>
       </Center>
